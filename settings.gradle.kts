@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "kmp-dry"
 include(":shared")
+include(":kmp-dry-logger")
