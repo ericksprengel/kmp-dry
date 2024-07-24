@@ -1,6 +1,22 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    id("maven-publish")
+}
+
+version = "0.0.1"
+group = "br.com.ericksprengel.kmpdry"
+
+publishing {
+    repositories {
+        maven {
+            url = uri("https://maven.pkg.github.com/ericksprengel/kmp-dry")
+            credentials(PasswordCredentials::class)
+            authentication {
+                create<BasicAuthentication>("basic")
+            }
+        }
+    }
 }
 
 kotlin {
